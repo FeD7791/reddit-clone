@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { Article } from '../article.model';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-article',
@@ -7,6 +8,8 @@ import { Article } from '../article.model';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent {
+  faarrowdown = faArrowDown;
+  faarrowup = faArrowUp;
   @HostBinding('attr.class') cssClass = 'row';
   @Input() article: Article;
   // article: Article;

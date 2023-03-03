@@ -1,0 +1,34 @@
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+form {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.posts {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-card {
+  border: solid gray 2px;
+  width: 700px;
+  background-color: cadetblue;
+}
+
+.app_component {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Regular";
+  font-size: 20px;
+  padding-top: 20px;
+}

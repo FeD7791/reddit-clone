@@ -1,23 +1,45 @@
-<div class="for wide column center aligned votes">
-  <div class="ui statistic">
-    <div class="value">{{ article.votes }}</div>
-    <div class="label">Points</div>
-  </div>
-</div>
+<div class="article_container">
+  <mat-card class="statistics_div">
+    <mat-card-content>
+      <div>
+        <p style="font-size: 50px; padding-bottom: 20px">{{ article.votes }}</p>
+      </div>
+      <div style="font-family: Italic">Points</div>
+    </mat-card-content>
+  </mat-card>
 
-<div class="twelve wide column">
-  <a class="ui large header" href="{{ article.link }}">{{ article.title }}</a>
-  <div class="meta">({{ article.domain() }})</div>
-  <ul class="ui horizontal list voters">
-    <li class="item">
-      <a href (click)="voteUp()">
-        <i class="arrow up icon">upvote</i>
-      </a>
-    </li>
-    <li class="item">
-      <a href (click)="voteDown()">
-        <i class="arrow down icon">downvote</i>
-      </a>
-    </li>
-  </ul>
+  <div class="links_div">
+    <a href="{{ article.link }}" class="link">{{ article.title }}</a>
+    <div>({{ article.domain() }})</div>
+    <ul
+      style="
+        padding-top: 20px;
+        list-style-type: none;
+        flex-direction: row;
+        display: flex;
+        width: 300px;
+        align-items: center;
+        justify-content: space-evenly;
+      "
+    >
+      <li>
+        <a
+          href
+          (click)="voteUp()"
+          style="text-decoration: none; color: skyblue"
+        >
+          <i><fa-icon [icon]="faarrowup"></fa-icon>Upvote</i>
+        </a>
+      </li>
+      <li style="padding-top: 10px">
+        <a
+          href
+          (click)="voteDown()"
+          style="text-decoration: none; color: skyblue"
+        >
+          <i><fa-icon [icon]="faarrowdown"></fa-icon>Downvote</i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>

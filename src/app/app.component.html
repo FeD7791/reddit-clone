@@ -1,26 +1,43 @@
-<form class="ui large form segment">
-  <h3 class="ui header">Add Link</h3>
-  <div class="field">
-    <label for="title">Title:</label>
-    <input name="title" #newtitle />
-    <!--title is an object of tipe HTMLInputElement-->
-    <!--Notation #newtitle is called: resolve-->
+<app-menu></app-menu>
+<div class="app_component">
+  <mat-card class="mat-card">
+    <mat-card-content>
+      <form class="ui large form segment">
+        <mat-card-header
+          ><mat-card-title
+            style="font-family: Regular; font-size: 50px; padding-bottom: 20px"
+            >Link</mat-card-title
+          ></mat-card-header
+        >
+
+        <mat-form-field appearance="outline">
+          <mat-label for="title">Title:</mat-label>
+          <input matInput placeholder="title" name="title" #newtitle />
+          <!--title is an object of tipe HTMLInputElement-->
+          <!--Notation #newtitle is called: resolve-->
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label for="link">Link</mat-label>
+          <input matInput placeholder="LINK" name="link" #newlink />
+        </mat-form-field>
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            class="example-button-row"
+            (click)="addArticle(newtitle, newlink)"
+          >
+            <!--This class comes from Semantic UI-->
+            Submit link
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <div class="posts">
+    <app-article
+      *ngFor="let article of sortedArticles()"
+      [article]="article"
+    ></app-article>
   </div>
-  <div>
-    <label for="link">Link:</label>
-    <input name="link" #newlink />
-  </div>
-  <button
-    (click)="addArticle(newtitle, newlink)"
-    class="ui positive right floated button"
-  >
-    <!--This class comes from Semantic UI-->
-    Submit link
-  </button>
-</form>
-<div class="ui grid posts">
-  <app-article
-    *ngFor="let article of sortedArticles()"
-    [article]="article"
-  ></app-article>
 </div>
